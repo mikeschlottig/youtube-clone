@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YouTube Clone</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+  <!-- Top Navigation Bar -->
+  <header class="flex items-center justify-between px-4 py-2 border-b border-gray-300 sticky top-0 bg-white z-50">
+    <!-- Left: Hamburger Menu -->
+    <button aria-label="Open menu" class="p-2 hover:bg-gray-200 rounded-md">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+
+    <!-- Center: YouTube Logo -->
+    <a href="#" class="flex items-center space-x-2">
+      <div class="bg-red-600 rounded-lg p-2 flex items-center justify-center">
+        <svg
+          class="w-6 h-6 text-white"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path d="M10 15l5.19-3L10 9v6z" />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M21.8 7.2a2.7 2.7 0 00-1.9-1.9C18.3 5 12 5 12 5s-6.3 0-7.9.3a2.7 2.7 0 00-1.9 1.9A28.4 28.4 0 002 12a28.4 28.4 0 00.2 4.8 2.7 2.7 0 001.9 1.9c1.6.3 7.9.3 7.9.3s6.3 0 7.9-.3a2.7 2.7 0 001.9-1.9A28.4 28.4 0 0022 12a28.4 28.4 0 00-.2-4.8z"
+          />
+        </svg>
+      </div>
+      <span class="text-3xl font-extrabold text-blue-700 select-none">Your Videos</span>
+    </a>
+
+    <!-- Right: Search Bar -->
+    <form class="flex flex-grow max-w-xl mx-4" role="search" aria-label="Site search">
+      <label for="search-input" class="sr-only">Search</label>
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Search"
+        class="flex-grow border border-gray-300 rounded-l-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+      />
+      <button
+        type="submit"
+        aria-label="Search"
+        class="bg-gray-100 border border-gray-300 border-l-0 rounded-r-full px-4 py-2 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-600"
+      >
+        <i class="fas fa-search text-gray-700"></i>
+      </button>
+    </form>
+
+    <!-- Right: Sign In Button -->
+    <a
+      href="#"
+      class="hidden sm:inline-block px-4 py-2 text-blue-700 font-semibold rounded hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
+    >
+      Sign in
+    </a>
+  </header>
+
+  <main class="flex max-w-7xl mx-auto mt-6 px-4 space-x-6">
+    <!-- Sidebar -->
+    <nav class="hidden md:flex flex-col w-60 space-y-4 text-gray-700 text-sm sticky top-16 h-[calc(100vh-64px)] overflow-y-auto">
+      <a href="#" class="flex items-center space-x-4 px-3 py-2 rounded hover:bg-gray-200">
+        <i class="fas fa-home text-xl"></i>
+        <span class="font-semibold">Home</span>
+      </a>
+      <a href="#" class="flex items-center space-x-4 px-3 py-2 rounded hover:bg-gray-200">
+        <i class="fas fa-fire text-xl"></i>
+        <span>Trending</span>
+      </a>
+      <a href="#" class="flex items-center space-x-4 px-3 py-2 rounded hover:bg-gray-200">
+        <i class="fas fa-bolt text-xl"></i>
+        <span>Shorts</span>
+      </a>
+      <a href="#" class="flex items-center space-x-4 px-3 py-2 rounded hover:bg-gray-200">
+        <i class="fas fa-folder-open text-xl"></i>
+        <span>Subscriptions</span>
+      </a>
+      <hr class="my-2 border-gray-300" />
+      <a href="#" class="flex items-center space-x-4 px-3 py-2 rounded hover:bg-gray-200">
+        <i class="fas fa-bookmark text-xl"></i>
+        <span>Library</span>
+      </a>
+      <a href="#" class="flex items-center space-x-4 px-3 py-2 rounded hover:bg-gray-200">
+        <i class="fas fa-history text-xl"></i>
+        <span>History</span>
+      </a>
+    </nav>
+
+    <!-- Main Content: Video Grid -->
+    <section class="flex-grow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Video Card -->
+      <article class="flex flex-col space-y-2">
+        <img
+          src="https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg"
+          alt="Sample Video Thumbnail"
+          class="rounded-lg w-full object-cover aspect-video"
+        />
+        <h3 class="text-sm font-semibold line-clamp-2">Sample Video Title 1</h3>
+        <p class="text-xs text-gray-600">Channel Name • 1.2M views • 2 days ago</p>
+      </article>
+      <article class="flex flex-col space-y-2">
+        <img
+          src="https://i.ytimg.com/vi/ScMzIvxBSi4/hqdefault.jpg"
+          alt="Sample Video Thumbnail"
+          class="rounded-lg w-full object-cover aspect-video"
+        />
+        <h3 class="text-sm font-semibold line-clamp-2">Sample Video Title 2</h3>
+        <p class="text-xs text-gray-600">Channel Name • 500K views • 1 week ago</p>
+      </article>
+      <article class="flex flex-col space-y-2">
+        <img
+          src="https://i.ytimg.com/vi/tgbNymZ7vqY/hqdefault.jpg"
+          alt="Sample Video Thumbnail"
+          class="rounded-lg w-full object-cover aspect-video"
+        />
+        <h3 class="text-sm font-semibold line-clamp-2">Sample Video Title 3</h3>
+        <p class="text-xs text-gray-600">Channel Name • 3.4M views • 3 weeks ago</p>
+      </article>
+      <article class="flex flex-col space-y-2">
+        <img
+          src="https://i.ytimg.com/vi/aqz-KE-bpKQ/hqdefault.jpg"
+          alt="Sample Video Thumbnail"
+          class="rounded-lg w-full object-cover aspect-video"
+        />
+        <h3 class="text-sm font-semibold line-clamp-2">Sample Video Title 4</h3>
+        <p class="text-xs text-gray-600">Channel Name • 2.1M views • 1 month ago</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-300 mt-12 py-4 text-center text-xs text-gray-600 select-none">
+    © 2024 YouTube Clone. All rights reserved.
+  </footer>
+
+</body>
+</html>
